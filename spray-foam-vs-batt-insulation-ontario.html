@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drywall Knowledge Hub — Expert Guides from LR Contracting Oakville</title>
+<meta name="description" content="Expert drywall guides from Oakville's leading drywall company. Costs, timelines, Level 5 finishes, insulation, custom homes — real answers from LR Contracting.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-dark:#9B7B2E;--charcoal:#141414;--off-white:#F5F2ED;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Lato',sans-serif;color:#1a1a1a;background:#fff}a{text-decoration:none;color:inherit}
+.site-nav{background:var(--charcoal);padding:16px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.site-nav img{height:44px;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#ccc;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover,.active{color:var(--gold)!important}
+.nav-quote{border:1px solid var(--gold);color:var(--gold)!important;padding:8px 18px}
+.blog-hero{background:var(--charcoal);padding:80px 60px 64px;position:relative;overflow:hidden}
+.blog-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.6}
+.blog-hero::after{content:'DRYWALL';position:absolute;right:-10px;bottom:-50px;font-family:'Playfair Display',serif;font-size:12rem;font-weight:900;color:rgba(201,168,76,.04);line-height:1;pointer-events:none}
+.hero-inner{max-width:700px;position:relative;z-index:1}
+.hero-ey{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.hero-ey-line{width:28px;height:1px;background:var(--gold)}
+.hero-ey span{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px}
+.blog-hero h1 em{font-style:italic;color:var(--gold)}
+.blog-hero p{font-size:.98rem;color:#aaa;line-height:1.8;max-width:560px}
+.authority{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.06);padding:40px 60px}
+.auth-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.06)}
+.auth-item{text-align:center;padding:24px;border-right:1px solid rgba(255,255,255,.06)}
+.auth-item:last-child{border-right:none}
+.auth-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block;line-height:1}
+.auth-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#555;margin-top:6px;display:block}
+.featured-wrap{max-width:1100px;margin:0 auto;padding:64px 60px 32px}
+.feat-label{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.feat-label-line{width:28px;height:1px;background:var(--gold)}
+.feat-label span{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold-dark);font-weight:700}
+.feat-card{display:grid;grid-template-columns:1.1fr 1fr;box-shadow:0 4px 36px rgba(0,0,0,.08);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 16px 56px rgba(0,0,0,.13)}
+.feat-img{overflow:hidden;max-height:380px}
+.feat-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block;filter:brightness(.95)}
+.feat-card:hover .feat-img img{transform:scale(1.05);filter:brightness(1)}
+.feat-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;background:#fff;border:1px solid #ede9e0;border-left:none}
+.feat-cat{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-weight:700;margin-bottom:14px;display:block}
+.feat-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:700;color:var(--charcoal);line-height:1.25;margin-bottom:14px}
+.feat-exc{font-size:.86rem;color:#555;line-height:1.8;margin-bottom:24px}
+.feat-foot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid #eee;font-size:.72rem;color:var(--muted)}
+.read-link{color:var(--gold-dark);font-weight:700}
+.grid-wrap{max-width:1100px;margin:0 auto;padding:0 60px 80px}
+.grid-hd{display:flex;justify-content:space-between;align-items:center;margin:48px 0 28px}
+.grid-hd h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--charcoal)}
+.grid-hd span{font-size:.76rem;color:var(--muted)}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ac{background:#fff;border:1px solid #ede9e0;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
+.ac:hover{transform:translateY(-5px);box-shadow:0 16px 44px rgba(0,0,0,.1);border-color:transparent}
+.ac-img{overflow:hidden;aspect-ratio:16/9}
+.ac-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .4s;filter:brightness(.9);display:block}
+.ac:hover .ac-img img{transform:scale(1.06);filter:brightness(1)}
+.ac-body{padding:22px 22px 18px;display:flex;flex-direction:column;flex:1}
+.ac-cat{font-size:.57rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-weight:700;margin-bottom:8px;display:block}
+.ac-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--charcoal);line-height:1.38;margin-bottom:9px}
+.ac-exc{font-size:.77rem;color:#666;line-height:1.7;flex:1;margin-bottom:14px}
+.ac-foot{display:flex;justify-content:space-between;align-items:center;padding-top:11px;border-top:1px solid #f0ece4;font-size:.67rem;color:var(--muted)}
+.ac-read{color:var(--gold-dark);font-weight:700}
+.blog-cta{background:var(--gold);padding:60px;text-align:center;position:relative;overflow:hidden}
+.blog-cta::before{content:'LR';position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(0,0,0,.06);line-height:1;pointer-events:none}
+.blog-cta h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--charcoal);margin-bottom:10px;position:relative;z-index:1}
+.blog-cta p{font-size:.9rem;color:rgba(20,20,20,.6);margin-bottom:28px;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;position:relative;z-index:1}
+.btn-dark{background:var(--charcoal);color:#fff;padding:14px 36px;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-block;transition:background .3s}
+.btn-dark:hover{background:#000}
+.btn-od{border:2px solid var(--charcoal);color:var(--charcoal);padding:14px 36px;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-block}
+.site-footer{background:#0a0a0a;padding:32px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.18)}
+.footer-copy span{color:var(--gold)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:.7rem;color:rgba(255,255,255,.25);letter-spacing:1px;text-transform:uppercase;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+@media(max-width:768px){
+  .site-nav{padding:12px 20px}.nav-links{display:none}
+  .blog-hero{padding:56px 22px 44px}
+  .authority{padding:28px 22px}.auth-inner{grid-template-columns:1fr 1fr}
+  .featured-wrap{padding:44px 22px 24px}.feat-card{grid-template-columns:1fr}.feat-img{max-height:220px}
+  .grid-wrap{padding:0 22px 56px}.articles-grid{grid-template-columns:1fr}
+  .blog-cta{padding:44px 22px}.cta-btns{flex-direction:column;align-items:center}
+  .site-footer{flex-direction:column;gap:14px;padding:24px 22px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html"><img src="../images/logo_horizontal.png" alt="LR Contracting Drywall Oakville"></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../projects.html">Projects</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="index.html" class="active">Blog</a></li>
+    <li><a href="../index.html#contact" class="nav-quote">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="blog-hero">
+  <div class="hero-inner">
+    <div class="hero-ey"><div class="hero-ey-line"></div><span>Drywall Knowledge Hub</span></div>
+    <h1>Expert Guides from<br>Oakville's <em>Drywall</em><br>Specialists</h1>
+    <p>10 years of hands-on drywall experience across Halton Region — distilled into honest, practical guides. No filler. Real answers from the people who do this work every day.</p>
+  </div>
+</div>
+
+<div class="authority">
+  <div class="auth-inner">
+    <div class="auth-item"><span class="auth-num">10+</span><span class="auth-lbl">Years in Halton Region</span></div>
+    <div class="auth-item"><span class="auth-num">500+</span><span class="auth-lbl">Projects Completed</span></div>
+    <div class="auth-item"><span class="auth-num">100%</span><span class="auth-lbl">Client Satisfaction</span></div>
+    <div class="auth-item"><span class="auth-num">L5</span><span class="auth-lbl">Standard Finish Grade</span></div>
+  </div>
+</div>
+
+<div class="featured-wrap">
+  <div class="feat-label"><div class="feat-label-line"></div><span>Featured Guide</span></div>
+  <a href="drywall-cost-oakville-2026.html" class="feat-card">
+    <div class="feat-img"><img src="../images/coffered1.jpeg" alt="Custom home coffered ceiling drywall Oakville"></div>
+    <div class="feat-body">
+      <span class="feat-cat">Cost Guide · May 2026</span>
+      <h2 class="feat-title">How Much Does Drywall Installation Cost in Oakville in 2026?</h2>
+      <p class="feat-exc">A complete pricing breakdown for Oakville and Halton Region — per square foot rates by project type, what drives costs up on custom homes, real project examples, and how to tell if a quote is fair.</p>
+      <div class="feat-foot"><span>6 min read</span><span class="read-link">Read Full Guide →</span></div>
+    </div>
+  </a>
+</div>
+
+<div class="grid-wrap">
+  <div class="grid-hd">
+    <h2>All Articles</h2>
+    <span>9 more guides below</span>
+  </div>
+  <div class="articles-grid">
+
+    <a href="spray-foam-vs-batt-insulation-ontario.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/insulation1.jpeg" alt="Spray foam insulation Ontario"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Insulation Guide</span>
+        <h3 class="ac-title">Spray Foam vs Batt Insulation — What's Better for Ontario Homes?</h3>
+        <p class="ac-exc">Real performance and cost differences — and the hybrid approach most of our Oakville custom home clients end up choosing.</p>
+        <div class="ac-foot"><span>April 2026 · 8 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="what-to-expect-drywall-renovation.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/project3.jpeg" alt="Drywall renovation Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Homeowner Guide</span>
+        <h3 class="ac-title">What to Expect During a Drywall Renovation</h3>
+        <p class="ac-exc">A 7-stage breakdown of exactly what happens from demo day to final coat — so you can plan your home and schedule around it.</p>
+        <div class="ac-foot"><span>March 2026 · 5 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="level-5-drywall-finish-explained.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/luxury3.jpeg" alt="Level 5 drywall finish Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Drywall Knowledge</span>
+        <h3 class="ac-title">What is a Level 5 Drywall Finish — And When Do You Need It?</h3>
+        <p class="ac-exc">Why some walls look perfect and others show every joint. The difference between L4 and L5 — and when the extra cost is non-negotiable.</p>
+        <div class="ac-foot"><span>February 2026 · 5 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="custom-home-drywall-oakville.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/luxury4.jpeg" alt="Custom home drywall Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Custom Homes</span>
+        <h3 class="ac-title">Custom Home Drywall in Oakville — What Builders Need to Know</h3>
+        <p class="ac-exc">Coffered ceilings, premium finish standards, scheduling on critical-path trades — what separates a genuine custom home drywall specialist from a renovation crew.</p>
+        <div class="ac-foot"><span>January 2026 · 7 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="drywall-contractor-oakville-how-to-choose.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/b4.jpeg" alt="Drywall work in progress — Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Hiring Guide</span>
+        <h3 class="ac-title">How to Choose a Drywall Contractor in Oakville — 7 Things to Check</h3>
+        <p class="ac-exc">The red flags, the right questions to ask, and why the cheapest quote is almost never the best value on a custom home project.</p>
+        <div class="ac-foot"><span>December 2025 · 6 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="drywall-basement-finishing-oakville.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/comm_tbar2.jpeg" alt="T-bar ceiling drywall Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Basement Guide</span>
+        <h3 class="ac-title">Basement Drywall Finishing in Oakville — Complete Guide</h3>
+        <p class="ac-exc">Moisture-resistant board, insulation sequencing, ceiling options, real costs and permit requirements for basement finishing in Oakville.</p>
+        <div class="ac-foot"><span>November 2025 · 7 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="metal-framing-drywall-oakville.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/comm_tbar4.jpeg" alt="Metal framing drywall Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Framing Guide</span>
+        <h3 class="ac-title">Metal Framing for Drywall in Oakville — What Every Builder Should Know</h3>
+        <p class="ac-exc">Steel stud vs wood framing — when metal wins, what it costs, and why we specify it on all custom home interior partitions.</p>
+        <div class="ac-foot"><span>October 2025 · 6 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="drywall-taping-texture-types-ontario.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/b4.jpeg" alt="Smooth drywall finish Ontario custom home"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Finish Guide</span>
+        <h3 class="ac-title">Drywall Taping and Texture Types in Ontario — Which is Right?</h3>
+        <p class="ac-exc">Smooth, skip trowel, orange peel, knockdown — a no-fluff guide to every drywall texture and which ones belong in a luxury Oakville custom home.</p>
+        <div class="ac-foot"><span>September 2025 · 6 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+    <a href="how-long-does-drywall-take.html" class="ac">
+      <div class="ac-img"><img loading="lazy" src="../images/e6.jpeg" alt="How long does drywall take Oakville"></div>
+      <div class="ac-body">
+        <span class="ac-cat">Planning Guide</span>
+        <h3 class="ac-title">How Long Does Drywall Take? Real Timelines for Oakville Projects</h3>
+        <p class="ac-exc">Basements, full custom home builds, commercial fit-outs — actual timelines, what causes delays, and how to build a schedule that holds.</p>
+        <div class="ac-foot"><span>August 2025 · 5 min</span><span class="ac-read">Read →</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="blog-cta">
+  <h2>Ready to Get Your Drywall Done Right?</h2>
+  <p>Free on-site quotes across Oakville, Burlington, Milton and Mississauga. premium finish standard. Your timeline, protected.</p>
+  <div class="cta-btns">
+    <a href="../index.html#contact" class="btn-dark">Request a Free Quote</a>
+    <a href="tel:+16476806655" class="btn-od">Call 647-680-6655</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p class="footer-copy">© 2026 <span>LR Contracting Ltd.</span> — Oakville's Drywall Specialists</p>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
