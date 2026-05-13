@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects — LR Contracting Drywall Oakville | Halton Region Portfolio</title>
+<meta name="description" content="LR Contracting's drywall project portfolio — custom homes, commercial fit-outs, T-bar ceilings, spray foam insulation and metal framing across Oakville and Halton Region.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-dark:#9B7B2E;--charcoal:#141414;--off-white:#F5F2ED;--muted:#888;--border:#E8E3D8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;color:#1a1a1a;background:#fff}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+
+/* NAV */
+.site-nav{background:var(--charcoal);padding:16px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,.15)}
+.site-nav img{height:46px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#ccc;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;transition:color .25s}
+.nav-links a:hover,.active{color:var(--gold)!important}
+.nav-quote{border:1px solid var(--gold)!important;color:var(--gold)!important;padding:9px 20px;transition:all .25s!important}
+.nav-quote:hover{background:var(--gold)!important;color:var(--charcoal)!important}
+
+/* HERO */
+.hero{background:var(--charcoal);padding:80px 60px 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.6}
+.hero::after{content:'500+';position:absolute;right:-10px;bottom:-30px;font-family:'Playfair Display',serif;font-size:16rem;font-weight:900;color:rgba(201,168,76,.04);line-height:1;pointer-events:none}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.eyebrow-line{width:28px;height:1px;background:var(--gold)}
+.eyebrow span{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:.98rem;color:#aaa;line-height:1.8;max-width:560px}
+
+/* STATS BAR */
+.stats-bar{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.06);padding:0 60px}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.06);border-top:none}
+.stat-item{padding:22px 24px;border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block;line-height:1}
+.stat-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#555;margin-top:6px;display:block}
+
+/* FILTER TABS */
+.filter-bar{background:var(--off-white);padding:20px 60px;border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:8px}
+.filter-btn{padding:8px 20px;border:1px solid #ccc;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;background:#fff;color:#555;transition:all .25s;font-family:'Lato',sans-serif}
+.filter-btn.active,.filter-btn:hover{border-color:var(--gold-dark);color:var(--gold-dark);background:#fff}
+
+/* CATEGORY SECTIONS */
+.projects-wrap{max-width:1200px;margin:0 auto;padding:64px 60px 80px}
+
+.cat-section{margin-bottom:72px}
+.cat-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.cat-title-wrap{}
+.cat-eyebrow{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold-dark);font-weight:700;display:block;margin-bottom:8px}
+.cat-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--charcoal)}
+.cat-count{font-size:.76rem;color:var(--muted)}
+
+/* MASONRY-STYLE GRIDS */
+/* Custom homes — 3 col featured layout */
+.grid-custom{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:4px}
+.gc-tall{grid-row:span 2}
+.gc-wide{grid-column:span 2}
+
+/* Standard 3 col */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.grid-3 .p-item{aspect-ratio:4/3}
+
+/* 4 col commercial */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.grid-4 .p-item{aspect-ratio:4/3}
+
+/* PROJECT ITEM */
+.p-item{position:relative;overflow:hidden;cursor:zoom-in}
+.p-item img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease,filter .4s;filter:brightness(.88) saturate(.95)}
+.p-item:hover img{transform:scale(1.06);filter:brightness(1) saturate(1)}
+.p-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,20,.92) 0%,rgba(20,20,20,.1) 55%,transparent 100%);opacity:0;transition:opacity .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.p-item:hover .p-overlay{opacity:1}
+.p-tag{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.p-name{font-family:'Playfair Display',serif;font-size:.95rem;color:#fff;font-weight:600;line-height:1.3}
+.p-desc{font-size:.74rem;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5}
+
+/* BEFORE/AFTER */
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px}
+.ba-label{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--charcoal);padding:4px 12px;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;z-index:2}
+
+/* CTA SECTION */
+.projects-cta{background:var(--gold);padding:60px;text-align:center;position:relative;overflow:hidden}
+.projects-cta::before{content:'LR';position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(0,0,0,.06);line-height:1;pointer-events:none}
+.projects-cta h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--charcoal);margin-bottom:10px;position:relative;z-index:1}
+.projects-cta p{font-size:.9rem;color:rgba(20,20,20,.6);margin-bottom:28px;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;position:relative;z-index:1;flex-wrap:wrap}
+.btn-dark{background:var(--charcoal);color:#fff;padding:14px 36px;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-block;transition:background .25s}
+.btn-dark:hover{background:#000}
+.btn-od{border:2px solid var(--charcoal);color:var(--charcoal);padding:14px 36px;font-size:.76rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-block;transition:all .25s}
+.btn-od:hover{background:rgba(0,0,0,.1)}
+
+/* FOOTER */
+.site-footer{background:#0a0a0a;padding:32px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.18)}
+.footer-copy span{color:var(--gold)}
+.footer-links{display:flex;gap:22px}
+.footer-links a{font-size:.7rem;color:rgba(255,255,255,.25);letter-spacing:1px;text-transform:uppercase;transition:color .25s}
+.footer-links a:hover{color:var(--gold)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:2rem;cursor:pointer;opacity:.7;transition:opacity .2s;background:none;border:none;line-height:1}
+.lightbox-close:hover{opacity:1}
+.lightbox-caption{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#ccc;font-size:.8rem;letter-spacing:1px;white-space:nowrap}
+
+@media(max-width:900px){
+  .site-nav{padding:12px 20px}.nav-links{display:none}
+  .hero{padding:56px 22px 44px}
+  .stats-bar{padding:0 22px}.stats-inner{grid-template-columns:1fr 1fr}
+  .filter-bar{padding:16px 22px}
+  .projects-wrap{padding:44px 22px 56px}
+  .grid-custom{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gc-tall,.gc-wide{grid-column:auto;grid-row:auto}
+  .grid-3,.grid-4{grid-template-columns:1fr 1fr}
+  .before-after{grid-template-columns:1fr}
+  .projects-cta{padding:44px 22px}.cta-btns{flex-direction:column;align-items:center}
+  .site-footer{flex-direction:column;gap:14px;padding:24px 22px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html"><img src="images/logo.png" alt="LR Contracting Drywall Oakville"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="index.html#contact" class="nav-quote">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Our Portfolio</span></div>
+    <h1>Real Work.<br>Real <em>Projects.</em><br>No Stock Photos.</h1>
+    <p>Every image on this page is an actual LR Contracting project — custom homes, commercial fit-outs and renovations across Oakville, Burlington, Milton and Halton Region. This is what we do every week.</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">500+</span><span class="stat-lbl">Projects Completed</span></div>
+    <div class="stat-item"><span class="stat-num">10+</span><span class="stat-lbl">Years Experience</span></div>
+    <div class="stat-item"><span class="stat-num">L5</span><span class="stat-lbl">Standard Finish Grade</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">Satisfaction Rate</span></div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" onclick="filterCat('all')">All Projects</button>
+  <button class="filter-btn" onclick="filterCat('custom')">Custom Homes</button>
+  <button class="filter-btn" onclick="filterCat('commercial')">Commercial</button>
+  <button class="filter-btn" onclick="filterCat('insulation')">Insulation</button>
+  <button class="filter-btn" onclick="filterCat('framing')">Metal Framing</button>
+  <button class="filter-btn" onclick="filterCat('basement')">Basement Finishing</button>
+</div>
+
+<div class="projects-wrap">
+
+  <!-- CUSTOM HOMES -->
+  <div class="cat-section" id="cat-custom">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Residential</span>
+        <h2 class="cat-title">Custom Home Drywall</h2>
+      </div>
+      <span class="cat-count">Oakville · Burlington · Milton</span>
+    </div>
+
+    <!-- Featured layout: tall + 2 + wide -->
+    <div class="grid-custom" style="margin-bottom:4px">
+      <div class="p-item gc-tall" onclick="openLightbox(this.querySelector('img').src,'Coffered Ceiling — Luxury Custom Home · Oakville')">
+        <img src="images/coffered1.jpeg" alt="Coffered ceiling luxury custom home drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Coffered Ceiling Detail</span><span class="p-desc">Multi-bay coffered ceiling with precise inside corner bead — Level 5 finish</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Tray Ceiling — Master Bedroom · Halton Region')">
+        <img src="images/custom2.jpeg" alt="Tray ceiling master bedroom custom home drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Master Bedroom Tray Ceiling</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Open Plan with Coffered Ceiling · Oakville')">
+        <img src="images/custom1.jpeg" alt="Open plan coffered ceiling custom home drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Open Plan — Coffered Ceiling</span></div>
+      </div>
+      <div class="p-item gc-wide" onclick="openLightbox(this.querySelector('img').src,'Skylight Well — Staircase Feature · Oakville')">
+        <img src="images/skylight_stair.jpeg" alt="Skylight well staircase drywall custom home Oakville" style="object-position:center 40%">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Skylight Well — Feature Staircase</span><span class="p-desc">Complex multi-angle drywall around a large skylight well — one of our most intricate residential installs</span></div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home Drywall · Oakville')">
+        <img src="images/custom3.jpeg" alt="Custom home drywall Oakville interior">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Custom Home Interior</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Large Open Plan — Custom Build · Oakville')">
+        <img src="images/custom4.jpeg" alt="Large open plan custom home drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Build · Oakville</span><span class="p-name">Large Open Plan Drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Multi-Room · Burlington')">
+        <img src="images/custom5.jpeg" alt="Multi-room custom home drywall Burlington">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Burlington</span><span class="p-name">Multi-Room Custom Build</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home Drywall In Progress · Oakville')">
+        <img src="images/custom6.jpeg" alt="Custom home drywall in progress Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">In Progress — First Coat</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Skylight Detail — Custom Home · Oakville')">
+        <img src="images/project1.jpeg" alt="Skylight vaulted ceiling drywall Oakville custom home">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Vaulted Ceiling with Skylights</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'LR Contracting Crew — Tray Ceiling Taping · Oakville')">
+        <img src="images/crew_work1.jpeg" alt="LR Contracting crew taping tray ceiling custom home Oakville">
+        <div class="p-overlay"><span class="p-tag">LR Contracting Crew · Live</span><span class="p-name">Tray Ceiling Taping — Live Job</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Residential Renovation — Full Drywall Taping · Halton Region')">
+        <img src="images/new7.jpeg" alt="Residential renovation full drywall taping Halton Region">
+        <div class="p-overlay"><span class="p-tag">Residential Reno · Halton Region</span><span class="p-name">Full House Renovation — First Coat</span><span class="p-desc">Complete drywall and taping on a whole-home renovation — coffered ceiling detail in living area</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Residential Renovation — Open Plan Drywall Completed')">
+        <img src="images/new8.jpeg" alt="Open plan residential renovation drywall completed">
+        <div class="p-overlay"><span class="p-tag">Residential Reno · Halton Region</span><span class="p-name">Open Plan — Drywall Complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Bedroom Drywall Taping · Oakville')">
+        <img src="images/new9.jpeg" alt="Custom home bedroom drywall taping Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Master Bedroom — Drywall Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Open Living Area Drywall · Oakville')">
+        <img src="images/new10.jpeg" alt="Custom home open living area drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Open Living Area — Full Scope</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Vaulted Ceiling Drywall · Oakville')">
+        <img src="images/new13.jpeg" alt="Luxury new build vaulted ceiling drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury Custom Build · Oakville</span><span class="p-name">Vaulted Ceiling — Luxury New Build</span><span class="p-desc">Exposed beam, vaulted drywall ceiling with recessed lighting layout on a high-end custom home</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Open Concept Main Floor · Oakville')">
+        <img src="images/new17.jpeg" alt="Luxury new build open concept main floor drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury Custom Build · Oakville</span><span class="p-name">Open Concept Main Floor</span><span class="p-desc">Dramatic open-plan with fireplace feature wall, vaulted ceilings and floor-to-ceiling glazing</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Great Room Drywall · Oakville')">
+        <img src="images/new19.jpeg" alt="Luxury new build great room drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury Custom Build · Oakville</span><span class="p-name">Great Room — Drywall & Board</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Main Hall Drywall · Oakville')">
+        <img src="images/new20.jpeg" alt="Luxury new build main hall drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury Custom Build · Oakville</span><span class="p-name">Main Hall — Vaulted Drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Bedroom with Coffered Ceiling · Oakville')">
+        <img src="images/new14.jpeg" alt="Custom home bedroom coffered ceiling drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Bedroom — Coffered Ceiling Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Open Living Room Drywall · Oakville')">
+        <img src="images/new15.jpeg" alt="Custom home open living room drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Open Living Room — Tray Ceiling</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Bedroom Coffered Ceiling Ready to Paint · Oakville')">
+        <img src="images/new16.jpeg" alt="Custom home bedroom coffered ceiling ready to paint Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Bedroom — Ready to Paint</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Garage Drywall — Custom Home · Oakville')">
+        <img src="images/new18.jpeg" alt="Garage drywall custom home Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Garage</span><span class="p-name">Drywalled Garage — Full Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Crew on Site — High-Rise Drywall · Halton Region')">
+        <img src="images/new4.jpeg" alt="LR Contracting crew high rise drywall Halton Region">
+        <div class="p-overlay"><span class="p-tag">LR Contracting Crew · Live</span><span class="p-name">High-Rise Scope — Crew on Site</span><span class="p-desc">Crew working a high-elevation commercial job — drywall installation on scaffolding</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Attic Conversion — Complex Ceiling Drywall · Oakville')">
+        <img src="images/b1.jpeg" alt="Attic conversion complex ceiling drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Attic Conversion — Complex Ceiling</span><span class="p-desc">Intricate drywall ceiling on a full attic conversion — cathedral angles, coffered sections and dormer returns</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Home — Coffered Ceiling New Build · Halton Region')">
+        <img src="images/b4.jpeg" alt="Luxury custom home coffered ceiling new build Halton Region">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Halton Region</span><span class="p-name">Coffered Ceiling — Luxury Custom Build</span><span class="p-desc">Large-format coffered ceiling with deep reveals — same project front exterior shown separately</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Home — Living Room Drywall · Halton Region')">
+        <img src="images/b5.jpeg" alt="Luxury custom home living room coffered ceiling drywall">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Halton Region</span><span class="p-name">Living Room — Coffered Ceiling Close-Up</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Open Living Space Drywall Complete · Halton Region')">
+        <img src="images/b7.jpeg" alt="Luxury new build open living drywall complete Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Open Living — Drywall Complete</span><span class="p-desc">Full drywall and taping complete on a wide open-plan living area with coffered ceiling</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Bedroom Coffered Ceiling Taping · Halton Region')">
+        <img src="images/b8.jpeg" alt="Custom home bedroom coffered ceiling taping Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Bedroom — Coffered Ceiling Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Vaulted Great Room Drywall · Halton Region')">
+        <img src="images/b9.jpeg" alt="Custom home vaulted great room drywall Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Vaulted Great Room — Drywall & Taping</span><span class="p-desc">Vaulted ceiling with exposed wood beam and recessed lighting — clean first-coat drywall throughout</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Residential Renovation — Drywall In Progress · Halton Region')">
+        <img src="images/b18.jpeg" alt="Residential renovation drywall ceiling in progress Halton Region">
+        <div class="p-overlay"><span class="p-tag">Residential Reno · Halton Region</span><span class="p-name">Ceiling Renovation — In Progress</span><span class="p-desc">Mid-renovation — steel hat channel ceiling being boarded over existing framing</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Main Floor Drywall Ready to Paint · Oakville')">
+        <img src="images/b19.jpeg" alt="Custom home main floor drywall ready to paint Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Main Floor — Ready to Paint</span><span class="p-desc">Clean tray ceiling and smooth walls — drywall complete and ready for prime coat</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Open Plan Coffered Ceiling · Oakville')">
+        <img src="images/b20.jpeg" alt="Custom home open plan coffered ceiling drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Open Plan — Coffered Ceiling Complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Garage Drywall — Full Taping Custom Home · Oakville')">
+        <img src="images/c1.jpeg" alt="Garage drywall full taping custom home Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Garage</span><span class="p-name">Triple-Car Garage — Full Drywall</span><span class="p-desc">Fully drywalled and taped triple-car garage — walls, ceiling and fire separation complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Open Plan Tray Ceiling First Coat · Oakville')">
+        <img src="images/c2.jpeg" alt="Custom home open plan tray ceiling first coat Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Open Plan — Tray Ceiling First Coat</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Vaulted Bedroom Ceiling Drywall · Oakville')">
+        <img src="images/c3.jpeg" alt="Custom home vaulted bedroom ceiling drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Oakville</span><span class="p-name">Vaulted Bedroom — Drywall Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Open Plan Fireplace Feature Wall · Halton Region')">
+        <img src="images/c4.jpeg" alt="Luxury new build open plan fireplace feature wall Halton Region">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Halton Region</span><span class="p-name">Feature Fireplace Wall — Open Plan</span><span class="p-desc">Dramatic open-plan drywall with wrapped fireplace column and floor-to-ceiling glazing throughout</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury New Build — Great Room Board Stage · Oakville')">
+        <img src="images/c5.jpeg" alt="Luxury new build great room board stage Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Great Room — Board Stage Complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Taping In Progress Open Plan · Halton Region')">
+        <img src="images/c6.jpeg" alt="Custom home taping in progress open plan Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Open Plan — Taping In Progress</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Primary Bedroom Tray Ceiling · Oakville')">
+        <img src="images/c7.jpeg" alt="Luxury custom build primary bedroom tray ceiling Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Primary Bedroom — Coffered Tray Ceiling</span><span class="p-desc">Large primary bedroom with recessed coffered ceiling — same luxury stone-exterior build</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Upper Hallway Skylight Feature · Oakville')">
+        <img src="images/c8.jpeg" alt="Luxury custom build upper hallway skylight feature Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Upper Level — Skylight Feature Wall</span><span class="p-desc">Two-storey skylight well with drywall surround — one of the most complex taping details on this build</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Bedroom Arched Window · Oakville')">
+        <img src="images/c9.jpeg" alt="Luxury custom build bedroom arched window drywall Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Bedroom — Arched Window Drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Bedroom Coffered Ceiling Taping · Oakville')">
+        <img src="images/c10.jpeg" alt="Luxury custom build bedroom coffered ceiling taping Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Bedroom — Coffered Ceiling Detail</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Open Living Coffered Ceiling · Oakville')">
+        <img src="images/c11.jpeg" alt="Luxury custom build open living coffered ceiling Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Open Living — Coffered Ceiling Complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Bedroom Door Frame Detail · Oakville')">
+        <img src="images/c12.jpeg" alt="Luxury custom build bedroom door frame detail Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Bedroom — Tray Ceiling & Window Detail</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Build — Main Floor Coffered Ceiling · Oakville')">
+        <img src="images/c13.jpeg" alt="Luxury custom build main floor coffered ceiling Oakville">
+        <div class="p-overlay"><span class="p-tag">Luxury New Build · Oakville</span><span class="p-name">Main Floor — Full Coffered Ceiling View</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Tray Ceiling Open Living · Halton Region')">
+        <img src="images/c14.jpeg" alt="Custom home tray ceiling open living Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Halton Region</span><span class="p-name">Open Living — Tray Ceiling Taping</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'LR Contracting Crew — Taping Live on Site · Halton Region')">
+        <img src="images/d5.jpeg" alt="LR Contracting crew taping live on site Halton Region">
+        <div class="p-overlay"><span class="p-tag">LR Contracting Crew · Live</span><span class="p-name">Crew Taping — Tray Ceiling Detail</span><span class="p-desc">One of our tapers working a tray ceiling on a residential renovation — the kind of detail that separates finished work from average work</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'LR Contracting Crew — High-Rise Drywall Scaffolding · Halton Region')">
+        <img src="images/d8.jpeg" alt="LR Contracting crew high-rise drywall scaffolding Halton Region">
+        <div class="p-overlay"><span class="p-tag">LR Contracting Crew · Live</span><span class="p-name">High-Rise Scope — Crew on Scaffolding</span><span class="p-desc">Crew boarding a large commercial space from scaffolding — floor-to-ceiling glazing, elevated site conditions</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMERCIAL & T-BAR -->
+  <div class="cat-section" id="cat-commercial">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Commercial</span>
+        <h2 class="cat-title">Commercial & T-Bar Projects</h2>
+      </div>
+      <span class="cat-count">Offices · Retail · Multi-Unit</span>
+    </div>
+
+    <div class="grid-4" style="margin-bottom:4px">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'T-Bar Ceiling Installation — Commercial · Halton Region')">
+        <img src="images/comm_tbar1.jpeg" alt="T-bar ceiling installation commercial Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Halton Region</span><span class="p-name">T-Bar Ceiling — Office Fit-Out</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'T-Bar Ceiling Completed — Commercial')">
+        <img src="images/comm_tbar2.jpeg" alt="Completed T-bar ceiling commercial office">
+        <div class="p-overlay"><span class="p-tag">Commercial · Office</span><span class="p-name">Acoustical Ceiling Completed</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Office Renovation — T-Bar & Drywall')">
+        <img src="images/comm_tbar3.jpeg" alt="Commercial office renovation T-bar drywall">
+        <div class="p-overlay"><span class="p-tag">Commercial · Office Reno</span><span class="p-name">T-Bar + Drywall Walls</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Large Commercial Space — Drywall & T-Bar')">
+        <img src="images/comm_tbar4.jpeg" alt="Large commercial drywall T-bar project">
+        <div class="p-overlay"><span class="p-tag">Commercial · Large Scale</span><span class="p-name">Full Floor Fit-Out</span></div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Renovation — T-Bar Ceiling')">
+        <img src="images/comm_tbar5.jpeg" alt="Commercial renovation T-bar ceiling">
+        <div class="p-overlay"><span class="p-tag">Commercial · Renovation</span><span class="p-name">Office Space Renovation</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Multi-Unit Residential Drywall — Corridor')">
+        <img src="images/multiunit1.jpeg" alt="Multi-unit residential drywall corridor">
+        <div class="p-overlay"><span class="p-tag">Multi-Unit Residential</span><span class="p-name">Corridor Drywall — Large Scale</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Drywall — Steel Stud Construction')">
+        <img src="images/commercial1.jpeg" alt="Commercial drywall steel stud construction">
+        <div class="p-overlay"><span class="p-tag">Commercial · New Build</span><span class="p-name">Steel Stud + Drywall Construction</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial New Build — Drywall & Insulation · Halton Region')">
+        <img src="images/new1.jpeg" alt="Commercial new build drywall insulation Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · New Build</span><span class="p-name">Commercial Shell — Drywall & Insulation</span><span class="p-desc">Full drywall scope on a commercial new build — walls, ceilings and insulation package</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Build — Vaulted Ceiling Drywall · Halton Region')">
+        <img src="images/new2.jpeg" alt="Commercial vaulted ceiling drywall installation">
+        <div class="p-overlay"><span class="p-tag">Commercial · New Build</span><span class="p-name">Vaulted Ceiling — Commercial Space</span><span class="p-desc">High-reach drywall on a dramatic vaulted commercial ceiling using scissor lift</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Multi-Level Commercial — Drywall Complete · Halton Region')">
+        <img src="images/e1.jpeg" alt="Multi-level commercial drywall complete Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Multi-Level</span><span class="p-name">Multi-Level Commercial — Drywall Complete</span><span class="p-desc">Massive open-plan commercial space — curved soffits, wrapped columns and seamless drywall throughout</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Tray Ceiling — Drywall Complete · Halton Region')">
+        <img src="images/e2.jpeg" alt="Commercial tray ceiling drywall complete Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · New Build</span><span class="p-name">Tray Ceiling — Commercial Space</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial New Build — Drywall In Progress · Halton Region')">
+        <img src="images/e6.jpeg" alt="Commercial new build drywall in progress scissor lift Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · New Build</span><span class="p-name">Commercial New Build — High-Reach Install</span><span class="p-desc">Drywall installation on a large commercial new build — scissor lift for elevated work</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Large Commercial Open Floor — Drywall In Progress')">
+        <img src="images/new5.jpeg" alt="Large commercial open floor drywall framing in progress">
+        <div class="p-overlay"><span class="p-tag">Commercial · Large Scale</span><span class="p-name">Open Floor Commercial — Framing & Board</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Multi-Column Space — Drywall Completed')">
+        <img src="images/new6.jpeg" alt="Commercial multi-column drywall completed">
+        <div class="p-overlay"><span class="p-tag">Commercial · Fit-Out</span><span class="p-name">Multi-Column Commercial Fit-Out</span><span class="p-desc">Large commercial floor with wrapped columns and full drywall ceiling system</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Large Commercial Fit-Out — PCL Job · Drywall Complete')">
+        <img src="images/b16.jpeg" alt="Large commercial fit-out PCL drywall complete">
+        <div class="p-overlay"><span class="p-tag">Commercial · Large Scale</span><span class="p-name">Commercial Fit-Out — Drywall Complete</span><span class="p-desc">Tray ceiling and full drywall scope on a large commercial fit-out — scaffold still in place</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Lobby — Drywall & Tray Ceiling Completed')">
+        <img src="images/b17.jpeg" alt="Commercial lobby drywall tray ceiling completed">
+        <div class="p-overlay"><span class="p-tag">Commercial · Lobby Fit-Out</span><span class="p-name">Lobby — Tray Ceiling & Drywall</span><span class="p-desc">Clean tray ceiling drywall on a commercial lobby — automatic entry doors and storefront framed in</span></div>
+      </div>
+    </div>
+
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Retail T-Bar Ceiling Completed — Wide View · Halton Region')">
+        <img src="images/d6.jpeg" alt="Retail T-bar ceiling completed wide view Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · T-Bar Complete</span><span class="p-name">Retail T-Bar — Wide View Complete</span><span class="p-desc">Full retail space with completed T-bar acoustical ceiling and drywall walls — ready for tenant fit-out</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Large Multi-Level Commercial — Drywall Complete · Halton Region')">
+        <img src="images/d7.jpeg" alt="Large multi-level commercial drywall complete Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Multi-Level</span><span class="p-name">Multi-Level Commercial — Drywall Complete</span><span class="p-desc">Massive open-plan commercial space across multiple levels — curved soffits, wrapped columns and seamless drywall throughout</span></div>
+      </div>
+    </div>
+
+    <!-- BEFORE / AFTER — Commercial Retail -->
+    <div class="cat-header" style="margin-top:40px">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Before & After</span>
+        <h2 class="cat-title">Commercial Retail Renovation</h2>
+      </div>
+      <span class="cat-count">Full Strip-Out to Finished Drywall</span>
+    </div>
+    <div class="before-after" style="position:relative">
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'BEFORE — Commercial Retail Strip-Out · Halton Region')">
+        <span class="ba-label">BEFORE</span>
+        <img src="images/b10.jpeg" alt="Before commercial retail strip-out Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Before</span><span class="p-name">Strip-Out — Exposed Structure</span></div>
+      </div>
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'AFTER — Commercial Retail Drywall Completed · Halton Region')">
+        <span class="ba-label" style="background:#1a1a1a;color:var(--gold)">AFTER</span>
+        <img src="images/b11.jpeg" alt="After commercial retail drywall completed Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · After</span><span class="p-name">Drywall Complete — Ready for Fit-Out</span></div>
+      </div>
+    </div>
+    <div class="before-after" style="margin-top:4px;position:relative">
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'BEFORE — Commercial Interior Demo · Halton Region')">
+        <span class="ba-label">BEFORE</span>
+        <img src="images/b12.jpeg" alt="Before commercial interior demo Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Before</span><span class="p-name">Interior Demo — Steel Stud Layout</span></div>
+      </div>
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'AFTER — Commercial Interior Drywall Finished · Halton Region')">
+        <span class="ba-label" style="background:#1a1a1a;color:var(--gold)">AFTER</span>
+        <img src="images/b14.jpeg" alt="After commercial interior drywall finished Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · After</span><span class="p-name">Drywall Finished — Same Space</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="cat-section" id="cat-framing">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Framing</span>
+        <h2 class="cat-title">Metal Framing</h2>
+      </div>
+      <span class="cat-count">Residential & Commercial</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Steel Stud Framing — Commercial Office Fit-Out')">
+        <img src="images/metal_frame1.jpeg" alt="Steel stud framing commercial office Oakville">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing</span><span class="p-name">Steel Stud — Office Fit-Out</span><span class="p-desc">Full metal stud layout, rooms and corridors ready for drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Metal Framing — Large Commercial Build')">
+        <img src="images/metal_frame2.jpeg" alt="Metal stud framing large commercial build">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing</span><span class="p-name">Large Commercial Layout</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Commercial Framing + Drywall — In Progress')">
+        <img src="images/commercial1.jpeg" alt="Commercial framing drywall in progress">
+        <div class="p-overlay"><span class="p-tag">Commercial · Full Scope</span><span class="p-name">Framing to Drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Metal Stud Framing — Office Partition Layout · Halton Region')">
+        <img src="images/c18.jpeg" alt="Metal stud framing office partition layout Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Halton Region</span><span class="p-name">Office Partitions — Steel Stud Layout</span><span class="p-desc">Full metal stud partition layout for an office fit-out — door openings, glazing pockets and corridor framed in</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Metal Stud Framing — Office Drywall In Progress · Halton Region')">
+        <img src="images/c19.jpeg" alt="Metal stud framing office drywall in progress Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Halton Region</span><span class="p-name">Office Partitions — Drywall In Progress</span><span class="p-desc">Same office fit-out — drywall boarding on steel stud partitions with T-bar ceiling already installed</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Office Fit-Out — Full Floor Steel Stud Layout · Halton Region')">
+        <img src="images/d1.jpeg" alt="Office fit-out full floor steel stud layout Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Halton Region</span><span class="p-name">Full Floor Layout — Office Fit-Out</span><span class="p-desc">Full-floor steel stud layout — multiple offices, corridors and glazed partition pockets all roughed in</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Office Fit-Out — Steel Stud Partition Grid · Halton Region')">
+        <img src="images/d2.jpeg" alt="Office fit-out steel stud partition grid Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Halton Region</span><span class="p-name">Partition Grid — Second Angle</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Office Fit-Out — Corridor Framing View · Halton Region')">
+        <img src="images/d3.jpeg" alt="Office fit-out corridor framing view Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Halton Region</span><span class="p-name">Corridor View — Framing Complete</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Steel Stud — Close-Up Detail · Halton Region')">
+        <img src="images/d4.jpeg" alt="Steel stud close-up detail Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial Framing · Detail</span><span class="p-name">Steel Stud — Precision Framing Detail</span><span class="p-desc">Tight steel stud spacing and door rough-opening — the framing quality that sets up a perfect drywall finish every time</span></div>
+      </div>
+    </div>
+
+    <!-- T-Bar Before/After -->
+    <div class="cat-header" style="margin-top:40px">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Before & After</span>
+        <h2 class="cat-title">Retail Renovation — Full Scope</h2>
+      </div>
+      <span class="cat-count">Strip-Out to T-Bar & Drywall Complete</span>
+    </div>
+    <div class="before-after" style="position:relative;margin-bottom:4px">
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'BEFORE — Retail Interior Strip-Out · Halton Region')">
+        <span class="ba-label">BEFORE</span>
+        <img src="images/c17.jpeg" alt="Before retail interior strip-out Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · Before</span><span class="p-name">Full Strip-Out — Exposed Structure</span></div>
+      </div>
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'AFTER — T-Bar Ceiling & Drywall Walls Completed · Halton Region')">
+        <span class="ba-label" style="background:#1a1a1a;color:var(--gold)">AFTER</span>
+        <img src="images/c15.jpeg" alt="After T-bar ceiling drywall walls completed Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · After</span><span class="p-name">T-Bar Ceiling + Drywall — Complete</span><span class="p-desc">Same retail space fully transformed — T-bar acoustical ceiling, drywall walls, plywood wainscot backing</span></div>
+      </div>
+    </div>
+    <div class="before-after" style="position:relative">
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'BEFORE — Same Retail Space Different Angle')">
+        <span class="ba-label">BEFORE</span>
+        <img src="images/c16.jpeg" alt="Before retail space second angle">
+        <div class="p-overlay"><span class="p-tag">Commercial · Before</span><span class="p-name">Strip-Out — Second Angle</span></div>
+      </div>
+      <div class="p-item" style="aspect-ratio:4/3;position:relative" onclick="openLightbox(this.querySelector('img').src,'Commercial Retail — Drywall Walls In Progress · Halton Region')">
+        <span class="ba-label" style="background:var(--gold);color:var(--charcoal)">IN PROGRESS</span>
+        <img src="images/b13.jpeg" alt="Commercial retail drywall walls in progress Halton Region">
+        <div class="p-overlay"><span class="p-tag">Commercial · In Progress</span><span class="p-name">Insulation & Board — Same Project</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSULATION -->
+  <div class="cat-section" id="cat-insulation">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Insulation</span>
+        <h2 class="cat-title">Spray Foam & Insulation</h2>
+      </div>
+      <span class="cat-count">Residential · Oakville & Halton Region</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Spray Foam Insulation — Custom Home · Oakville')">
+        <img src="images/insulation1.jpeg" alt="Spray foam insulation custom home Oakville walls ceiling">
+        <div class="p-overlay"><span class="p-tag">Spray Foam · Custom Home</span><span class="p-name">Full Envelope Insulation</span><span class="p-desc">Closed-cell spray foam on all exterior walls and roofline before drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Spray Foam — Vaulted Ceiling Application')">
+        <img src="images/insulation2.jpeg" alt="Spray foam insulation vaulted ceiling custom home">
+        <div class="p-overlay"><span class="p-tag">Spray Foam · Vaulted Ceiling</span><span class="p-name">Vaulted Roofline Application</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Spray Foam + Vapour Barrier — Before Drywall')">
+        <img src="images/insulation3.jpeg" alt="Spray foam vapour barrier before drywall installation">
+        <div class="p-overlay"><span class="p-tag">Spray Foam + Poly</span><span class="p-name">Insulation + Vapour Barrier</span><span class="p-desc">Spray foam walls with vapour barrier — ready for steel stud and drywall</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Batt Insulation & Vapour Barrier — Vaulted Ceiling · Custom Home')">
+        <img src="images/new11.jpeg" alt="Batt insulation vapour barrier vaulted ceiling custom home">
+        <div class="p-overlay"><span class="p-tag">Batt Insulation · Custom Home</span><span class="p-name">Vaulted Ceiling — Batt & Vapour Barrier</span><span class="p-desc">Full batt insulation and poly vapour barrier on a vaulted ceiling — ready for drywall boarding</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Batt Insulation — Large Vaulted New Build · Oakville')">
+        <img src="images/new12.jpeg" alt="Batt insulation large vaulted new build Oakville">
+        <div class="p-overlay"><span class="p-tag">Batt Insulation · New Build</span><span class="p-name">Large Vaulted Space — Insulation Package</span><span class="p-desc">Full batt insulation and vapour barrier on an expansive vaulted custom home — walls and roofline complete</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BASEMENT FINISHING -->
+  <div class="cat-section" id="cat-basement">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Residential</span>
+        <h2 class="cat-title">Basement Finishing</h2>
+      </div>
+      <span class="cat-count">Oakville · Burlington · Milton</span>
+    </div>
+    <div class="grid-3">
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Basement Finishing — Drywall Taping Complete · Oakville')">
+        <img src="images/new3.jpeg" alt="Basement finishing drywall taping complete Oakville">
+        <div class="p-overlay"><span class="p-tag">Basement · Oakville</span><span class="p-name">Basement Finish — Taping Complete</span><span class="p-desc">Fully drywalled and taped basement ready for paint — smooth ceilings and walls throughout</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Batt Insulation & Vapour Barrier — Ready to Board · Halton Region')">
+        <img src="images/b2.jpeg" alt="Batt insulation vapour barrier ready to board Halton Region">
+        <div class="p-overlay"><span class="p-tag">Insulation · Halton Region</span><span class="p-name">Batt + Poly — Ready to Board</span><span class="p-desc">Full batt insulation and vapour barrier installed — drywall boards staged and ready to go up</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Batt Insulation — Commercial Renovation Ready for Drywall')">
+        <img src="images/b13.jpeg" alt="Batt insulation commercial renovation ready for drywall">
+        <div class="p-overlay"><span class="p-tag">Insulation · Commercial</span><span class="p-name">Commercial Reno — Insulation Package</span><span class="p-desc">Batt insulation and vapour barrier complete on a commercial renovation — boards staged and ready</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXTERIOR / LUXURY BUILDS -->
+  <div class="cat-section" id="cat-exterior">
+  <div class="cat-section" id="cat-exterior">
+    <div class="cat-header">
+      <div class="cat-title-wrap">
+        <span class="cat-eyebrow">Exterior</span>
+        <h2 class="cat-title">Exterior Renovation</h2>
+      </div>
+      <span class="cat-count">Full Scope Residential</span>
+    </div>
+    <div class="grid-3">
+      <div class="p-item" style="grid-column:span 2" onclick="openLightbox(this.querySelector('img').src,'Before & After — Exterior Stucco Renovation')">
+        <img src="images/exterior_reno.jpeg" alt="Before and after exterior stucco renovation Oakville" style="height:380px;object-fit:cover;object-position:center">
+        <div class="p-overlay"><span class="p-tag">Exterior · Full Scope Renovation</span><span class="p-name">Before & After — Exterior Stucco Renovation</span><span class="p-desc">Complete exterior envelope renovation — sheathing, wrap, new stucco finish</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home Drywall Interior — Same Project')">
+        <img src="images/project2.jpeg" alt="Custom home interior drywall renovation Oakville" style="height:380px;object-fit:cover">
+        <div class="p-overlay"><span class="p-tag">Custom Home Interior</span><span class="p-name">Interior Drywall — Same Project</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Luxury Custom Home — Exterior Under Construction · Halton Region')">
+        <img src="images/b15.jpeg" alt="Luxury custom home exterior under construction Halton Region">
+        <div class="p-overlay"><span class="p-tag">Luxury Custom Home · Exterior</span><span class="p-name">Stone Exterior — Under Construction</span><span class="p-desc">One of the luxury custom homes LR Contracting handled the full interior drywall scope on — stone facade, arched windows, triple-car garage</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Winter New Build Drywall In Progress · Halton Region')">
+        <img src="images/b3.jpeg" alt="Custom home winter new build drywall in progress Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom Home · Winter Build</span><span class="p-name">Winter New Build — Open Plan Taping</span><span class="p-desc">Full drywall scope on a large custom home during winter build — propane heat to control drying conditions</span></div>
+      </div>
+      <div class="p-item" onclick="openLightbox(this.querySelector('img').src,'Custom Home — Coffered Ceiling New Build In Progress · Halton Region')">
+        <img src="images/b6.jpeg" alt="Custom home coffered ceiling new build in progress Halton Region">
+        <div class="p-overlay"><span class="p-tag">Custom New Build · Halton Region</span><span class="p-name">New Build — Coffered Ceiling In Progress</span></div>
+      </div>
+    </div>
+  </div>
+
+<div class="projects-cta">
+  <h2>See Something You Like?</h2>
+  <p>Every project starts with a free on-site visit. We assess your scope, ask the right questions, and come back with a detailed written quote — no surprises.</p>
+  <div class="cta-btns">
+    <a href="index.html#contact" class="btn-dark">Request a Free Quote</a>
+    <a href="tel:+16476806655" class="btn-od">📞 647-680-6655</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p class="footer-copy">© 2026 <span>LR Contracting Ltd.</span> — Oakville's Drywall Specialists</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+// Lightbox
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+// Filter buttons
+function filterCat(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.cat-section').forEach(s => {
+    if(cat === 'all') { s.style.display = ''; }
+    else { s.style.display = s.id === 'cat-' + cat ? '' : 'none'; }
+  });
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; obs.unobserve(e.target); }
+}), {threshold:.05});
+document.querySelectorAll('.cat-section').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .7s,transform .7s';
+  obs.observe(el);
+});
+</script>
+
+</body>
+</html>
